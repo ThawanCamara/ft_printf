@@ -1,0 +1,21 @@
+>>> PRIORITIES <<<
+
+
+
+%x | %X
+	- inputs
+		> decimal
+		> octal
+		> hexadecimal
+
+	- outputs
+		> hexadecimal
+
+%i
+	- inputs
+		> decimal
+		> octal
+		> hexadecimal
+
+	- outputs
+		> decimal
