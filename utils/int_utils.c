@@ -1,4 +1,4 @@
-#include "../libftprintf.h" 
+#include "../ft_printf.h" 
 
 int	ft_putnbr_n(int n, int fd)
 {
@@ -19,4 +19,15 @@ int	ft_putnbr_n(int n, int fd)
 		ft_putnbr_n(num / 10, fd);
 	count += ft_putchar_n(num % 10 + '0', fd);
 	return (count + sign);
+}
+
+int	ft_putunbr_n(unsigned int n, int fd)
+{
+	static int	count;
+	
+	count = 0;
+	if (n >= 10)
+		ft_putunbr_n(n / 10, fd);
+	count += ft_putchar_n(n % 10 + '0', fd);
+	return (count);
 }

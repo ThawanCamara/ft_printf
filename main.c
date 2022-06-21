@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include "libftprintf.h"
+#include "ft_printf.h"
+#include <limits.h>
 
 int main(void)
 {
@@ -11,12 +12,14 @@ int main(void)
 //	//printf("%s\n", ft_strchr(s, '%'));
 //	ft_printf(s1, i, s2);
 
-	int d = 010;
+//	char *p = "abcd";
+//	int d = 010;
 //	int o = 010;
-//	int h = 0x10;
+//	int h = 0xFFF;
 
 	printf(">>> INPUT TESTS <<<\n");
-	ft_printf(">>> %d\n", d);
+	ft_printf("FT: %x\n", LONG_MAX);
+	printf("RO: %lx\n", LONG_MAX); 
 	
 	//TESTS FOR %d
 	//printf("\nTESTS FOR %%d\n");

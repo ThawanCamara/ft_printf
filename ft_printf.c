@@ -1,5 +1,4 @@
-#include "libftprintf.h"
-#include <stdio.h>
+#include "ft_printf.h"
 
 int	spec_handler(char c, va_list args)
 {
@@ -7,14 +6,18 @@ int	spec_handler(char c, va_list args)
 		return (ft_putchar_n(va_arg(args, int), 1));
 	if (c == SPEC_STR)
 		return (ft_putstr_n(va_arg(args, const char *), 1));
-//	if (c == SPEC_PTR)
-	if (c == SPEC_DEC)
+	if (c == SPEC_PTR)
+		return (ft_putptr_n(va_arg(args, void *), 1));
+	if (c == SPEC_DEC || c == SPEC_INT)
 		return (ft_putnbr_n(va_arg(args, int), 1));
-//	if (c == SPEC_INT)
-//	if (c == SPEC_UDEC)
-//	if (c == SPEC_HEXLOW)
-//	if (c == SPEC_HEXUP)
-//	if (c == SPEC_PERCENT)
+	if (c == SPEC_UDEC)
+		return (ft_putunbr_n(va_arg(args, unsigned int), 1));
+	if (c == SPEC_HEXLOW)
+		return (ft_puthexlow_n(va_arg(args, unsigned int), 1));
+	if (c == SPEC_HEXUP)
+		return (ft_puthexup_n(va_arg(args, unsigned int), 1));
+	if (c == SPEC_PERCENT)
+		return (ft_putchar_n('%', 1));
 	return (0);
 }
 
