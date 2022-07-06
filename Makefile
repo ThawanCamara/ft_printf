@@ -14,7 +14,6 @@ OBJS := ${SRCS:.c=.o}
 
 all: ${NAME}
 
-.c.o: ${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}: ${OBJS} ft_printf.h
 	ar -rc ${NAME} ${OBJS}

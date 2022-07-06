@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tde-souz <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/06 00:22:39 by tde-souz          #+#    #+#             */
+/*   Updated: 2022/07/06 00:23:45 by tde-souz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	spec_handler(char c, va_list args)
@@ -24,7 +36,7 @@ int	spec_handler(char c, va_list args)
 int	print_handler(const char *s, va_list args)
 {
 	int	print_count;
-	int check;	
+	int	check;	
 
 	print_count = 0;
 	while (*s)
@@ -37,14 +49,14 @@ int	print_handler(const char *s, va_list args)
 		print_count += check;
 		s++;
 	}
-	return(print_count);
+	return (print_count);
 }
 
 int	ft_printf(const char *s, ...)
 {
 	int		print_count;
 	va_list	args;
-	
+
 	va_start(args, s);
 	print_count = print_handler(s, args);
 	va_end(args);
